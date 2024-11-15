@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アスキー迷路ゲーム</title>
+    <title>ASCII MAZE GAME</title>
 </head>
 
 <style>
@@ -14,7 +14,7 @@
 </style>
 <body>
     <pre id="game"></pre>
-    <p>矢印キーで移動してください</p>
+    <p>[←][→][↑][↓]：いどう</p>
 
     <script>
         // ゲームの設定
@@ -26,7 +26,7 @@
             "+ + + +-+-+-+ + +-+",
             "| |   |       |   |",
             "+-+-+ + +-+-+-+ + +",
-            "|     | |     | |E|",
+            "|     | |     | |G|",
             "+-+-+-+-+-+-+-+-+-+"
         ];
 
@@ -53,11 +53,11 @@
             const newX = playerPosition.x + dx;
             const newY = playerPosition.y + dy;
 
-            if (maze[newY][newX] === " " || maze[newY][newX] === "E") {
+            if (maze[newY][newX] === " " || maze[newY][newX] === "G") {
                 playerPosition.x = newX;
                 playerPosition.y = newY;
-                if (maze[newY][newX] === "E") {
-                    alert("ゴールに到着しました！おめでとう！");
+                if (maze[newY][newX] === "G") {
+                    alert("ゴールに到着しました！");
                     playerPosition = { x: 1, y: 1 }; // リセット
                 }
                 drawMaze();
